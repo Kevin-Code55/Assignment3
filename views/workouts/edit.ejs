@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm mt-4">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h4 mb-0">Log New Workout</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/workouts/add">
+                    <!-- Exercise Name Area -->
+                    <div class="mb-3">
+                        <label for="exercise" class="form-label">Exercise Name</label>
+                        <input type="text" class="form-control" id="exercise" name="exercise" placeholder="e.g., Bench Press" required>
+                    </div>
+
+                    <!-- Reps Area-->
+                    <div class="mb-3">
+                        <label for="reps" class="form-label">Reps</label>
+                        <input type="number" class="form-control" id="reps" name="reps" placeholder="e.g., 10" required>
+                    </div>
+
+                    <!-- Weight Area-->
+                    <div class="mb-3">
+                        <label for="weight" class="form-label">Weight (lbs)</label>
+                        <input type="number" class="form-control" id="weight" name="weight" placeholder="e.g., 135" required>
+                    </div>
+
+                    <!-- Submit Area -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success">Save Entry</button>
+                        <a href="/workouts" class="btn btn-link text-center mt-2">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
