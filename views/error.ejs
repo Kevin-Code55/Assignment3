@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5 text-center">
+    <div class="alert alert-danger">
+        <h1 class="display-4">Error</h1>
+        <p class="lead"><%= message %></p>
+        <% if (error.status) { %>
+            <p>Status Code: <%= error.status %></p>
+        <% } %>
+        <hr>
+        <a href="/" class="btn btn-primary">Go Home</a>
+    </div>
+
+    <% if (error.stack) { %>
+        <pre class="text-start mt-4 p-3 bg-light border"><%= error.stack %></pre>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>
