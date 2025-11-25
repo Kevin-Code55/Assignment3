@@ -1,22 +1,25 @@
 const express = require('express');
 const router = express.Router();
+const controller = require('../controllers/workoutController');
 
 
-// Purpose: Show the main list of all workouts
+// Shows the list of workouts 
 router.get('/', controller.list);
-// Allows the user to add a workout by presenting the form
+
+
+//Shows the form to add a new workout
 router.get('/add', controller.addPage);
 
-//Allows the user to add a workout and keeps the data
+//Shows the form and allows a workout to be added
 router.post('/add', controller.create);
 
-//Allows the user to edit the form
+//Shows the form to allow edits
 router.get('/edit/:id', controller.editPage);
 
-//Allows the user to update the workout 
+//Shows the form to allow edits and saves the edits
 router.post('/edit/:id', controller.update);
 
 //Allows the user to delete a workout
-router.get('/remove/:id', controller.delete);
+router.get('/delete/:id', controller.delete);
 
 module.exports = router;
